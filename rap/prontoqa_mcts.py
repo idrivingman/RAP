@@ -188,7 +188,7 @@ def reasoning_mcts_search(query: str,
         world_outputs = []
         for w_input in world_inputs:
             w_output = concurrent_apply_gpt4(w_input, reward_sp)
-            w_output = w_output.strip().split('result_grade:')[-1]
+            w_output = w_output.strip().split('result:')[-1]
             w_output = int(re.search(r'\d+', w_output).group())
             world_outputs.append(w_output)
         wo_sum = sum(world_outputs)

@@ -13,7 +13,7 @@ def setup_openai_client_gpt4():
     )
 def workflow_gpt4(userprompt, system_prompt, max_retries=20):
     client = setup_openai_client_gpt4()
-    model_name = "gpt-4-turbo-2024-04-09" # 或者gpt-4o-2024-08-06或者o1-preview-2024-09-12
+    model_name = "gpt-4o-2024-08-06" # 或者gpt-4o-2024-08-06或者o1-preview-2024-09-12
     max_tokens = 4096 # o1最大8000
     def make_api_request():
         completion = client.chat.completions.create(
